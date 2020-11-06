@@ -11,6 +11,9 @@ app.use(express.json());
 app.use('/api/jokes', require('./routes/jokes'));
 app.use('/api/othersites', require('./routes/othersites'));
 app.use('/api/otherjokes', require('./routes/otherjokes'));
+
+
+module.exports.main = main;
 app.use(express.static(__dirname + '/public'));
 
 const port = process.env.PORT || config.localPort; // Heroku
