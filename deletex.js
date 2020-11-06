@@ -1,22 +1,23 @@
-// postx.js
+// deletex.js
 const fetch = require('node-fetch');
 
 let jokeUrl = 'https://krdo-joke-registry.herokuapp.com/api/services';
 
-async function post(url, objekt) {
-    const respons = await fetch(url, {
-        method: "POST",
+async function deLete(url, objekt) {
+    let respons = await fetch(url, {
+        method: "DELETE",
         body: JSON.stringify(objekt),
         headers: { 'Content-Type': 'application/json' }
     });
-    if (respons.status !== 200) // Created
+    if (respons.status !== 200) // OK
         throw new Error(respons.status);
     return await respons.json();
 }
 
 async function main(url) {
     try {
-        let respons = await post(url, { name: 'Bord 6 Joke service', address: 'https://jokesitefinale.herokuapp.com/', secret: 'kikærte'});
+        let respons = await deLete(url, { address: 'goddaghttps://jokesitefinale.herokuapp.com/', secret: 'kikærte'});
+
         console.log(respons);
     } catch (fejl) {
         console.log(fejl);
