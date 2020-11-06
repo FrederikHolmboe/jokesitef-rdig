@@ -5,9 +5,6 @@ const router = express.Router();
 const fetch = require('node-fetch');
 
 
-var post = require("./postx");
-post.main();
-
 router
     .get('/', async (request, response) => {
         try {
