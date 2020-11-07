@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const config = require('./config');
-var cors = require('cors')
+var cors = require('cors');
 
 
 app.use(cors());

@@ -16,7 +16,7 @@ async function deLete(url, objekt) {
 
 async function main(url) {
     try {
-        let respons = await deLete(url, { address: 'goddaghttps://jokesitefinale.herokuapp.com/', secret: 'kikærte'});
+        let respons = await deLete(url, { address: 'https://jokesitefinale.herokuapp.com/', secret: 'kikærte'});
 
         console.log(respons);
     } catch (fejl) {
