@@ -46,9 +46,6 @@ async function generateHjemmesideTable(sites) {
 }
 const alleJokes = document.getElementById('voresjokes');
 
-console.log(alleJokes)
-
-
 alleJokes.addEventListener('click', async (event) => {
   if (!event.isTrusted) return // do nothing on the second run
   try {
