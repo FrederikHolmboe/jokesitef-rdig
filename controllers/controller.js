@@ -30,13 +30,25 @@ exports.Sites = async function () {
         return await get(getServiceURL);
 }
 
-exports.getJokesFraSites = async function (address) {
-        return await get(address + "api/jokes");
-}
+// exports.getJokesFraSites = async function (address) {
+//         return await get(address + "api/jokes");
+// }
 
 exports.getJokes = function () {
     return joke.find().exec();
 };
+
+
+exports.postWebsite = async function(objekt) {
+    const respons = await fetch(getServiceURL, {
+        method: "POST",
+        body: JSON.stringify(objekt),
+        headers: { 'Content-Type': 'application/json' }
+    });
+    if (respons.status !== 200) // Created
+        throw new Error(respons.status);
+    return await respons.json();
+}
 
 // exports.getSites = async function () {
 //     return get(urlServices);

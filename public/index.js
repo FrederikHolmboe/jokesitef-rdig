@@ -1,6 +1,15 @@
-
-const urlServices = 'https://krdo-joke-registry.herokuapp.com/api/services'
 // index.js
+async function post(url, objekt) {
+  const respons = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(objekt),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  if (respons.status !== 200) // Created
+    throw new Error(respons.status);
+  return await respons.json();
+}
+
 async function get(url) {
   const respons = await fetch(url);
   if (respons.status !== 200) // OK
@@ -15,18 +24,14 @@ async function getText(url) {
   return await respons.text();
 }
 
-let allesites;
-
-async function post(url, objekt) {
-  const respons = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(objekt),
-    headers: { 'Content-Type': 'application/json' }
-  });
-  if (respons.status !== 200) // Created
-    throw new Error(respons.status);
-  return await respons.json();
+async function checkPost()
+{
+  let status = await post('api/othersites');
+  console.log(status);
 }
+checkPost();
+
+let allesites;
 
 
 async function generateJokeTable(jokes) {
@@ -89,12 +94,6 @@ andresites.addEventListener('click', async (event) => {
     console.error(err) // or alert it, or put the message on the page
   }
 })
-
-function clear() {
-  let clear = document.getElementById('infoJokes');
-  clear.innerHTML = ""
-}
-
 
 function findJokes() {
   async function getJokes() {

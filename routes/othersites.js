@@ -21,6 +21,15 @@ router
             sendStatus(e, response);
         }
     })
+    .post('/', async (request, response) => {
+        try{
+            let PostSite = await controller.postWebsite( { name: 'Bord 6 Joke service', address: 'https://jokesitefinale.herokuapp.com/', secret: 'kikærte'})
+            response.send(PostSite);
+        }
+        catch (e){
+            sendStatus(e, response);
+        }
+    })
 
 
 function sendStatus(e, response) {
