@@ -1,0 +1,8 @@
+Link : https://jokesitefinale.herokuapp.com/
+Fejl og mangler : Håndtering af fejl kan justeres, men den fryser ikke programmet uanset om den fejler eller ej.
+Der mangler tests, og den skulle gerne opdatere link hver gang den åbner nu.
+
+Gruppe : Gruppen har været på 6, da vi har arbejdet tæt sammen om at løse hjemmeside problemet. Vi startede ud med at være delt op, men fandt
+hurtigt ud af vi sad med mange af de samme problemer og endte derfor ud med et samlet projekt i slutningen.
+
+Gruppe : Frederik, Martin, Jonathan, Jonas, Andreas, Mathias
