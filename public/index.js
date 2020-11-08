@@ -58,7 +58,6 @@ alleJokes.addEventListener('click', async (event) => {
     let jokes = document.getElementById('infoJokes');
     let header = document.getElementById('header');
     header.innerHTML = "Vores jokes";
-    console.log(jokes);
     let joke = await get('api/jokes');
     jokes.innerHTML = await generateJokeTable(joke);
     // alleJokes.click() // simulate a new click
@@ -107,7 +106,6 @@ function findJokes() {
       }
 
       let jokesFraSites = await get('api/otherjokes/' + id);
-      console.log(jokesFraSites);
 
       let hjemmesider = document.getElementById('infoJokes');
 
